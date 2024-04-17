@@ -14,28 +14,30 @@ import matplotlib.pyplot as plt
 # In[144]:
 
 
-# images of virat kohli
-from PIL import Image
-
-imgs = ["2.png", "vk3.jpg", "vk5.jpg"]
 print('''
       Meet VIRAT KOHLI, a cricketing legend whose journey from humble beginnings to global stardom
       is nothing short of inspiring.
       With exceptional talent and unwavering determination, Kohli has etched his name in the annals of cricket history. 
       Join us as we delve into the remarkable story of India's cricketing icon, Virat Kohli.''')
-fig, axes = plt.subplots(1, len(imgs), figsize=(15, 5))
-for ax, img_path in zip(axes, imgs):
-    img = Image.open(img_path)
-    ax.imshow(img)
-    ax.set_title(img_path)
-
+from PIL import Image
+# Open the images
+img1 = Image.open('2.png')
+img2 = Image.open('vk5.jpg')
+# Plotting
+fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+# Display the images
+axes[0].imshow(img1)
+axes[0].axis('off')
+axes[1].imshow(img2)
+axes[1].axis('off')
+plt.tight_layout()
 plt.show()
-
 
 # In[168]:
 
 
-data.head(30)
+data=pd.read_csv("deliveries.csv")
+data.head(3)
 
 
 # # Total Runs by Virat Kohli
